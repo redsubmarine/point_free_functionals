@@ -11,3 +11,9 @@ import Foundation
 func incr(_ a: Int) -> Int {
     a + 1
 }
+
+func square(_ a: Int) -> Int {
+    a * a
+}
+
+let increaseThenSquare = incr >>> square
