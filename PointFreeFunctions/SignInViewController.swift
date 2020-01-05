@@ -16,68 +16,49 @@ class SignInViewController: UIViewController {
         self.view.backgroundColor = .white
         
         let gradientView = GradientView()
-        gradientView.fromColor = UIColor(red: 0.5, green: 0.85, blue: 1, alpha: 0.85)
-        gradientView.toColor = .white
-        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        gradientView |> gradientStyle
         
         let logoImageView = UIImageView(image: UIImage(named: "logo"))
-        logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor, multiplier: logoImageView.frame.width / logoImageView.frame.height).isActive = true
+        logoImageView |> implicitAspectRatioStyle
+        
+        UIButton.appearance() |> baseButtonStyle
         
         let gitHubButton = UIButton(type: .system)
-        gitHubButton |> filledButtonStyle
         
-        gitHubButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
-        gitHubButton.setImage(UIImage(named: "github"), for: .normal)
-        gitHubButton.setTitle("Sign in with GitHub", for: .normal)
+        gitHubButton |> githubButtonStyle
+            <> {
+                $0.setTitle("Sign in with GitHub", for: .normal)
+        }
         
         let orLabel = UILabel()
-        orLabel.font = .systemFont(ofSize: 14, weight: .medium)
-        orLabel.textAlignment = .center
-        orLabel.textColor = UIColor(white: 0.625, alpha: 1)
-        orLabel.text = "or"
+        orLabel |> orLabelStyle
+            <> {
+                $0.text = "or"
+        }
         
         let emailField = UITextField()
-        baseTextFieldStyle(emailField)
-        emailField.clipsToBounds = true
-        emailField.layer.cornerRadius = 6
-//        emailField.layer.borderColor = UIColor(white: 0.75, alpha: 1).cgColor
-//        emailField.layer.borderWidth = 1
-//        emailField.borderStyle = .roundedRect
-//        emailField.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        emailField.keyboardType = .emailAddress
-        emailField.placeholder = "blob@pointfree.co"
+        emailField |> emailTextFieldStyle
         
         let passwordField = UITextField()
-        baseTextFieldStyle(passwordField)
-        passwordField.clipsToBounds = true
-        passwordField.layer.cornerRadius = 6
-//        passwordField.layer.borderColor = UIColor(white: 0.75, alpha: 1).cgColor
-//        passwordField.layer.borderWidth = 1
-//        passwordField.borderStyle = .roundedRect
-//        passwordField.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        passwordField.isSecureTextEntry = true
-        passwordField.placeholder = "••••••••••••••••"
+        passwordField |> passwordTextFieldStyle
         
         let signInButton = UIButton(type: .system)
-        signInButton |> roundedButtonStyle
-        
-        signInButton.layer.borderColor = UIColor.black.cgColor
-        signInButton.layer.borderWidth = 2
-        signInButton.setTitleColor(.black, for: .normal)
-        signInButton.setTitle("Sign in", for: .normal)
+        signInButton |> borderButtonStyle
+            <> {
+                $0.setTitle("Sign in", for: .normal)
+        }
         
         let forgotPasswordButton = UIButton(type: .system)
-        forgotPasswordButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-        forgotPasswordButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        forgotPasswordButton.setTitleColor(.black, for: .normal)
-        forgotPasswordButton.setTitle("I forgot my password", for: .normal)
+        forgotPasswordButton |> textButtonStyle
+            <> {
+                $0.setTitle("I forgot my password", for: .normal)
+        }
         
         let legalLabel = UILabel()
-        legalLabel.font = .systemFont(ofSize: 11, weight: .light)
-        legalLabel.numberOfLines = 0
-        legalLabel.textAlignment = .center
-        legalLabel.textColor = UIColor(white: 0.5, alpha: 1)
-        legalLabel.text = "By signing into Point-Free you agree to our latest terms of use and privacy policy."
+        legalLabel |> finePrintStyle
+            <> {
+                $0.text = "By signing into Point-Free you agree to our latest terms of use and privacy policy."
+        }
         
         let rootStackView = UIStackView(arrangedSubviews: [
             logoImageView,
@@ -90,11 +71,7 @@ class SignInViewController: UIViewController {
             legalLabel,
         ])
         
-        rootStackView.axis = .vertical
-        rootStackView.isLayoutMarginsRelativeArrangement = true
-        rootStackView.layoutMargins = UIEdgeInsets(top: 32, left: 16, bottom: 32, right: 16)
-        rootStackView.spacing = 16
-        rootStackView.translatesAutoresizingMaskIntoConstraints = false
+        rootStackView |> rootStackViewStyle
         
         self.view.addSubview(gradientView)
         self.view.addSubview(rootStackView)
