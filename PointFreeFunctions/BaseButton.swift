@@ -8,102 +8,14 @@
 
 import UIKit
 
-// subclassing
-
-class BaseButton: UIButton {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-        titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-class FilledButton: RoundedButton {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        backgroundColor = .black
-        tintColor = .white
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-class RoundedButton: BaseButton {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        clipsToBounds = true
-        layer.cornerRadius = 6
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-
-//compose
-
-extension UIButton {
-    
-    static var base: UIButton {
-        let button = UIButton()
-        button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        return button
-    }
-    
-    static var filled: UIButton {
-        let button = Self.base
-        button.backgroundColor = .black
-        button.tintColor = .white
-        return button
-    }
-    
-    static var rounded: UIButton {
-        let button = Self.filled
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 6
-        return button
-    }
-    
-}
-
-//func baseButtonStyle(_ button: UIButton) {
-//    button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-//    button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-//}
-
 let baseButtonStyle: (UIButton) -> Void = {
     $0.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
     $0.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
 }
 
-//func roundedButtonStyle(_ button: UIButton) {
-//    button.clipsToBounds = true
-//    button.layer.cornerRadius = 6
-//}
 let roundedButtonStyle = baseButtonStyle
     <> roundedStyle
 
-//func filledButtonStyle(_ button: UIButton) {
-//    button.backgroundColor = .black
-//    button.tintColor = .white
-//}
 let filledButtonStyle = roundedButtonStyle
     <> {
         $0.backgroundColor = .black
@@ -117,14 +29,10 @@ let roundedStyle: (UIView) -> Void = {
 
 let borderButtonStyle = roundedButtonStyle
     <> borderStyle(color: .black, width: 2)
-    <> {
-        $0.setTitleColor(.black, for: .normal)
-}
+    <> { $0.setTitleColor(.black, for: .normal) }
 
 let textButtonStyle = baseButtonStyle
-    <> {
-        $0.setTitleColor(.black, for: .normal)
-}
+    <> { $0.setTitleColor(.black, for: .normal) }
 
 let imageButtonStyle: (UIImage?) -> (UIButton) -> Void = { image in
     { button in
@@ -159,11 +67,6 @@ let passwordTextFieldStyle = baseTextFieldStyle
         $0.placeholder = "••••••••••••••••"
 }
 
-//let borderStyle: (UIView) -> Void = {
-//    $0.layer.borderColor = ???
-//    $0.layer.borderWidth = ???
-//}
-
 func borderStyle(color: UIColor, width: CGFloat) -> (_ view: UIView) -> Void {
     { view in
         view.layer.borderColor = color.cgColor
@@ -174,21 +77,15 @@ func borderStyle(color: UIColor, width: CGFloat) -> (_ view: UIView) -> Void {
 /// labels
 
 func fontStyle(ofSize size: CGFloat, weight: UIFont.Weight) -> (UILabel) -> Void {
-    { label in
-        label.font = .systemFont(ofSize: size, weight: weight)
-    }
+    { $0.font = .systemFont(ofSize: size, weight: weight) }
 }
 
 func textColorStyle(_ color: UIColor) -> (UILabel) -> Void {
-    { label in
-        label.textColor = color
-    }
+    { $0.textColor = color }
 }
 
 func alignStyle(_ alignment: NSTextAlignment) -> (UILabel) -> Void {
-    { label in
-        label.textAlignment = alignment
-    }
+    { $0.textAlignment = alignment }
 }
 
 let centerStyle = alignStyle(.center)
@@ -240,7 +137,7 @@ func implicitAspectRatioStyle<V: UIView>(_ view: V) {
     aspectRatioStyle(size: view.frame.size)(view)
 }
 
-func roundedRectStyle<View: UIView>(_ view: View) {
-    view.clipsToBounds = true
-    view.layer.cornerRadius = 6
+let roundedRectStyle: (UIView) -> Void = {
+    $0.clipsToBounds = true
+    $0.layer.cornerRadius = 6
 }
