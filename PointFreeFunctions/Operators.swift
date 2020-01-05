@@ -74,3 +74,10 @@ func <> <A>(
         g(&a)
     }
 }
+
+func <> <A: AnyObject>(f: @escaping (A) -> Void, g: @escaping (A) -> Void) -> ((A) -> Void) {
+    { a in
+        f(a)
+        g(a)
+    }
+}

@@ -24,12 +24,8 @@ class SignInViewController: UIViewController {
         logoImageView.widthAnchor.constraint(equalTo: logoImageView.heightAnchor, multiplier: logoImageView.frame.width / logoImageView.frame.height).isActive = true
         
         let gitHubButton = UIButton(type: .system)
-        gitHubButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-        gitHubButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        gitHubButton.clipsToBounds = true
-        gitHubButton.layer.cornerRadius = 6
-        gitHubButton.backgroundColor = .black
-        gitHubButton.tintColor = .white
+        gitHubButton |> filledButtonStyle
+        
         gitHubButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16)
         gitHubButton.setImage(UIImage(named: "github"), for: .normal)
         gitHubButton.setTitle("Sign in with GitHub", for: .normal)
@@ -41,30 +37,30 @@ class SignInViewController: UIViewController {
         orLabel.text = "or"
         
         let emailField = UITextField()
+        baseTextFieldStyle(emailField)
         emailField.clipsToBounds = true
         emailField.layer.cornerRadius = 6
-        emailField.layer.borderColor = UIColor(white: 0.75, alpha: 1).cgColor
-        emailField.layer.borderWidth = 1
-        emailField.borderStyle = .roundedRect
-        emailField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+//        emailField.layer.borderColor = UIColor(white: 0.75, alpha: 1).cgColor
+//        emailField.layer.borderWidth = 1
+//        emailField.borderStyle = .roundedRect
+//        emailField.heightAnchor.constraint(equalToConstant: 44).isActive = true
         emailField.keyboardType = .emailAddress
         emailField.placeholder = "blob@pointfree.co"
         
         let passwordField = UITextField()
+        baseTextFieldStyle(passwordField)
         passwordField.clipsToBounds = true
         passwordField.layer.cornerRadius = 6
-        passwordField.layer.borderColor = UIColor(white: 0.75, alpha: 1).cgColor
-        passwordField.layer.borderWidth = 1
-        passwordField.borderStyle = .roundedRect
-        passwordField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+//        passwordField.layer.borderColor = UIColor(white: 0.75, alpha: 1).cgColor
+//        passwordField.layer.borderWidth = 1
+//        passwordField.borderStyle = .roundedRect
+//        passwordField.heightAnchor.constraint(equalToConstant: 44).isActive = true
         passwordField.isSecureTextEntry = true
         passwordField.placeholder = "••••••••••••••••"
         
         let signInButton = UIButton(type: .system)
-        signInButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-        signInButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-        signInButton.clipsToBounds = true
-        signInButton.layer.cornerRadius = 6
+        signInButton |> roundedButtonStyle
+        
         signInButton.layer.borderColor = UIColor.black.cgColor
         signInButton.layer.borderWidth = 2
         signInButton.setTitleColor(.black, for: .normal)

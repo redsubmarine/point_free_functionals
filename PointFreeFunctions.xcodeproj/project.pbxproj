@@ -18,6 +18,7 @@
 		3462072723ACD91F002C93A8 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462072623ACD91F002C93A8 /* Operators.swift */; };
 		3462072923ACD95E002C93A8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462072823ACD95E002C93A8 /* Functions.swift */; };
 		9DC04CDC23C238760070BAC7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC04CDB23C238760070BAC7 /* SignInViewController.swift */; };
+		9DC04CDE23C23B560070BAC7 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC04CDD23C23B560070BAC7 /* BaseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3462072623ACD91F002C93A8 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		3462072823ACD95E002C93A8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		9DC04CDB23C238760070BAC7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9DC04CDD23C23B560070BAC7 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				3462070423ACD83A002C93A8 /* SceneDelegate.swift */,
 				3462070623ACD83A002C93A8 /* ViewController.swift */,
 				9DC04CDB23C238760070BAC7 /* SignInViewController.swift */,
+				9DC04CDD23C23B560070BAC7 /* BaseButton.swift */,
 				3462070823ACD83A002C93A8 /* Main.storyboard */,
 				3462070B23ACD83C002C93A8 /* Assets.xcassets */,
 				3462070D23ACD83C002C93A8 /* LaunchScreen.storyboard */,
@@ -215,6 +218,7 @@
 				3462070723ACD83A002C93A8 /* ViewController.swift in Sources */,
 				3462072723ACD91F002C93A8 /* Operators.swift in Sources */,
 				9DC04CDC23C238760070BAC7 /* SignInViewController.swift in Sources */,
+				9DC04CDE23C23B560070BAC7 /* BaseButton.swift in Sources */,
 				3462070323ACD83A002C93A8 /* AppDelegate.swift in Sources */,
 				3462072923ACD95E002C93A8 /* Functions.swift in Sources */,
 				3462070523ACD83A002C93A8 /* SceneDelegate.swift in Sources */,
