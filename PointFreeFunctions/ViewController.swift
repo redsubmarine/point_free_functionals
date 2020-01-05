@@ -14,7 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        moveToSignIn("")
+    }
 
 
+    @IBAction func moveToSignIn(_ sender: Any) {
+        navigationController?.show(SignInViewController(), sender: nil)
+    }
 }
 
