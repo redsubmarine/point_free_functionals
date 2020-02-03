@@ -17,6 +17,8 @@
 		3462072523ACD8C6002C93A8 /* OperatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462072423ACD8C6002C93A8 /* OperatorsTests.swift */; };
 		3462072723ACD91F002C93A8 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462072623ACD91F002C93A8 /* Operators.swift */; };
 		3462072923ACD95E002C93A8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462072823ACD95E002C93A8 /* Functions.swift */; };
+		34823D3E23E7F4D800C82EC3 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34823D3D23E7F4D800C82EC3 /* Curry.swift */; };
+		34823D4023E7F9E600C82EC3 /* CurryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34823D3F23E7F9E600C82EC3 /* CurryTests.swift */; };
 		9DC04CDC23C238760070BAC7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC04CDB23C238760070BAC7 /* SignInViewController.swift */; };
 		9DC04CDE23C23B560070BAC7 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC04CDD23C23B560070BAC7 /* BaseButton.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		3462072423ACD8C6002C93A8 /* OperatorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorsTests.swift; sourceTree = "<group>"; };
 		3462072623ACD91F002C93A8 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		3462072823ACD95E002C93A8 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		34823D3D23E7F4D800C82EC3 /* Curry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curry.swift; sourceTree = "<group>"; };
+		34823D3F23E7F9E600C82EC3 /* CurryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurryTests.swift; sourceTree = "<group>"; };
 		9DC04CDB23C238760070BAC7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9DC04CDD23C23B560070BAC7 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +93,7 @@
 		3462070123ACD83A002C93A8 /* PointFreeFunctions */ = {
 			isa = PBXGroup;
 			children = (
+				34823D3D23E7F4D800C82EC3 /* Curry.swift */,
 				3462072623ACD91F002C93A8 /* Operators.swift */,
 				3462072823ACD95E002C93A8 /* Functions.swift */,
 				3462070223ACD83A002C93A8 /* AppDelegate.swift */,
@@ -109,6 +114,7 @@
 			children = (
 				3462071923ACD83C002C93A8 /* PointFreeFunctionsTests.swift */,
 				3462072423ACD8C6002C93A8 /* OperatorsTests.swift */,
+				34823D3F23E7F9E600C82EC3 /* CurryTests.swift */,
 				3462071B23ACD83C002C93A8 /* Info.plist */,
 			);
 			path = PointFreeFunctionsTests;
@@ -218,6 +224,7 @@
 				3462070723ACD83A002C93A8 /* ViewController.swift in Sources */,
 				3462072723ACD91F002C93A8 /* Operators.swift in Sources */,
 				9DC04CDC23C238760070BAC7 /* SignInViewController.swift in Sources */,
+				34823D3E23E7F4D800C82EC3 /* Curry.swift in Sources */,
 				9DC04CDE23C23B560070BAC7 /* BaseButton.swift in Sources */,
 				3462070323ACD83A002C93A8 /* AppDelegate.swift in Sources */,
 				3462072923ACD95E002C93A8 /* Functions.swift in Sources */,
@@ -230,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3462071A23ACD83C002C93A8 /* PointFreeFunctionsTests.swift in Sources */,
+				34823D4023E7F9E600C82EC3 /* CurryTests.swift in Sources */,
 				3462072523ACD8C6002C93A8 /* OperatorsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
